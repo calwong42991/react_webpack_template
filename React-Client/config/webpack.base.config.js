@@ -6,6 +6,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 // config.entry = ['babel-polyfill', './src/index.jsx']
 
 module.exports = {
+  entry: './React-Client/src/index.jsx',
   module: {
     rules: [{
       test: /\.jsx$/,
@@ -17,7 +18,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './React-Client/src/index.html',
+      template: './React-Client/dist/index.html',
       filename: './index.html'
     })
   ]
