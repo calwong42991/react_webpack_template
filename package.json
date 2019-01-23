@@ -4,7 +4,9 @@
   "description": "react with webpack broiler plate",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --mode=development --config React-Client/config/webpack.base.config.js --open --hot --history-api-fallback"
+    "start": "node_modules/.bin/webpack-dev-server --mode=development --config React-Client/config/webpack.base.config.js --open --hot --history-api-fallback --env.PLATFORM=local --env.VERSION=stag",
+    "prebuild": "webpack --mode=production --config React-Client/config/webpack.prod.config.js --env.PLATFORM=production --env.VERSION=stag --progress",
+    "build": "node server"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "sass": "^1.16.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.1",
